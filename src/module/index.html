@@ -9,118 +9,17 @@
     <link rel="stylesheet" type="text/css" href="./static/mui/css/mui.min.css">
     <link rel="stylesheet" type="text/css" href="./static/css/base.css">
     <link rel="stylesheet" type="text/css" href="./static/iconfont/iconfont.css">
-    <title>一票通</title>
-    <style type="text/css">
-        .mui-bar {box-shadow: none;}
-        .mui-bar .mui-icon {font-size: 20px;}
-        .mui-bar .mui-icon.icon-leimupinleifenleileibie-- {font-size: 18px;}
-    </style>
+    <title>vueMutiplePages</title>
 </head>
 
 <body>
-    <nav class="mui-bar mui-bar-tab">
-        <a id="defaultTab" data-title='首页' class="mui-tab-item mui-active" href="module/index.html">
-            <span class="mui-icon iconfont icon-home" style="position:relative;top:0px;"></span>
-            <span class="mui-tab-label">首页</span>
-        </a>
-        <a class="mui-tab-item" data-title='发布' href="module/publish.html">
-            <span class="mui-icon iconfont icon-fabu1"></span>
-            <span class="mui-tab-label">发布</span>
-        </a>
-        <a class="mui-tab-item" data-title='我的' href="module/personal.html">
-            <span class="mui-icon iconfont icon-wode"></span>
-            <span class="mui-tab-label">我的</span>
-        </a>
-    </nav>
+    
 </body>
 
 <script src="./static/mui/js/mui.min.js" charset="utf-8"></script>
 <script src="./static/js/tools.js" charset="utf-8"></script>
 <script type="text/javascript">
-    mui.init();
-    var subpages = ['module/index.html', 'module/publish.html', 'module/personal.html'];
-    var subpage_style;
-    if(mui.os.ios) {
-        subpage_style = {
-            top: '0',
-            bottom: '51px'
-        }
-    } else if(mui.os.android) {
-        subpage_style = {
-            top: '45px',
-            bottom: '51px'
-        }
-    }
-    var aniShow = {};
-
-    var self;       // 保存当前webview对象
-    // 创建子页面，首个选项卡页面显示，其它均隐藏；
-    mui.plusReady(function() {
-        plus.navigator.setStatusBarBackground('#0C78E5');
-        self = plus.webview.currentWebview();
-        for (var i = 0; i < subpages.length; i++) {
-            var temp = {};
-            var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
-            if (i > 0) {
-                sub.hide();
-            } else {
-                temp[subpages[i]] = "true";
-                mui.extend(aniShow, temp);
-            }
-            self.append(sub);
-        }
-    });
-    // 当前激活选项
-    var activeTab = subpages[0];
-    // 选项卡点击事件
-    mui('.mui-bar-tab').on('tap', 'a', function(e) {
-        var targetTab = this.getAttribute('href');
-        var title = this.getAttribute("data-title");
-        if (targetTab == activeTab) {
-            return;
-        }
-        if(targetTab === 'module/publish.html') {
-            e.cancelBubble = true;
-            e.preventDefault();
-            tools.openWindow({
-                url: targetTab,
-                id: 'publish.html'
-            })
-            return;
-        }
-//      self.setStyle({
-//          titleNView: {
-//              titleText: title
-//          }
-//      });
-        // 显示目标选项卡
-        // 若为iOS平台或非首次显示，则直接显示
-        if (mui.os.ios || aniShow[targetTab]) {
-            plus.webview.show(targetTab);
-        } else {
-            // 否则，使用fade-in动画，且保存变量
-            var temp = {};
-            temp[targetTab] = "true";
-            mui.extend(aniShow, temp);
-            plus.webview.show(targetTab, "fade-in", 300);
-        }
-        // 隐藏当前;
-        plus.webview.hide(activeTab);
-        // 更改当前活跃的选项卡
-        activeTab = targetTab;
-    });
-    // 自定义事件，模拟点击“首页选项卡”
-    document.addEventListener('gohome', function() {
-        var defaultTab = document.getElementById("defaultTab");
-        // 模拟首页点击
-        mui.trigger(defaultTab, 'tap');
-        // 切换选项卡高亮
-        var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
-        if (defaultTab !== current) {
-            current.classList.remove('mui-active');
-            defaultTab.classList.add('mui-active');
-        }
-    });
+    window.location.href = 'module/index.html'
 </script>
 
 </html>

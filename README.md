@@ -15,7 +15,7 @@
       |- App.vue  
       |- index.html
       |- index.js
-      |- detail         // 子页面
+      |- detail         子页面
         ...
     |- test             test页面
       ...

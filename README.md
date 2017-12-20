@@ -3,23 +3,23 @@
 
 `git clone https://github.com/Jessom/vue-multiple-pages.git`
 
-# 目录结构
+## directory
 ```
-|- build          webpack相关
-|- config         webpack配置相关
-|- src            工作目录
-  |- common       资源文件
-  |- components   公共组件
-  |- module       页面文件
-    |- index      主页面
+|- build                webpack相关
+|- config               webpack配置相关
+|- src                  工作目录
+  |- common             资源文件
+  |- components         公共组件
+  |- module             页面文件
+    |- index            主页面
       |- App.vue  
       |- index.html
       |- index.js
-      |- detail     // 子页面
+      |- detail         // 子页面
         ...
-    |- test       test页面
+    |- test             test页面
       ...
-|- static         静态文件资源
+|- static               静态文件资源
   ...
 ```
 
@@ -40,4 +40,3 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-# HeadCut

@@ -15,10 +15,7 @@
       |- App.vue  
       |- index.html
       |- index.js
-      |- detail         子页面
         ...
-    |- test             test页面
-      ...
 |- static               静态文件资源
   ...
 ```

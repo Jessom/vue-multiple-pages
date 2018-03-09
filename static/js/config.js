@@ -1,9 +1,5 @@
 var config = {
-    OS_URL: 'http://61.155.203.44:60113/Service.svc', // APP请求远程服务器基地址
-    NODE_URL: 'http://61.155.203.44:60116/Service.svc', // PC请求地址
-    OS_FILEURL: 'http://61.155.203.44:60105/Service.svc', // 图片地址
-    IMG_URL: 'http://61.155.203.44:60105',
-    SOCKET_BASE_URL: 'ws://61.155.203.44:60111'
+    // 主要存放一些请求的url
 }
 
 resetKinds = {
@@ -109,11 +105,4 @@ sortTypes = {
     LAST_DESC: 7,
     ANY_KEY: 8,
     ANY_KEY_DESC: 9
-}
-
-staffKinds = { // 权限
-    none: 0, // 无权限
-    teller: 1, // 检票员
-    change: 2, // 改签员
-    all: 3, // 既是改签员又是检票员
 }

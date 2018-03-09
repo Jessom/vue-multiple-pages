@@ -1,0 +1,36 @@
+@charset "UTF-8"
+@import './_init-variable.sass'
+html
+  font-size: 62.5%
+  body
+    font-family: "Microsoft YaHei", "SimSun", Verdana, Arial, Helvetica, sans-serif
+    font-size: 1.4rem
+
+/**
+ * 按钮
+ */
+/*主题按钮*/
+.base-btn
+  background-color: $baseColor
+  color: #fff
+  border: none
+  &:active
+    background-color: darken($baseColor, 10) !important
+
+.table
+  display: table
+  width: 100%
+  .table-row
+    display: table-row
+  .table-cell
+    display: table-cell
+    text-align: center
+    &.middle
+      vertical-align: middle
+
+.horizontal
+  display: table
+  table-layout: fixed
+  .horizontal-cell
+    display: table-cell
+    vertical-align: middle
